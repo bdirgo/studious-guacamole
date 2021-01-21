@@ -1,3 +1,4 @@
+// #include <stdio.h>
 /* 
  * CS:APP Data Lab 
  * 
@@ -131,6 +132,17 @@ NOTES:
 
 
 #endif
+
+// void showbits( unsigned int x )
+// {
+//     int i=0;
+//     for (i = (sizeof(int) * 8) - 1; i >= 0; i--)
+//     {
+//        putchar(x & (1u << i) ? '1' : '0');
+//     }
+//     printf("\n");
+// }
+
 //1
 /* 
  * bitXor - x^y using only ~ and & 
@@ -155,7 +167,10 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int tmin(void) {
-  return 2;
+  long zero = 0x0;
+  int minusOne = ~zero;
+  int shifted = minusOne<<31;
+  return shifted;
 }
 //2
 /*
@@ -166,7 +181,7 @@ int tmin(void) {
  *   Rating: 2
  */
 int isTmax(int x) {
-  return 2;
+  return !(x + x + 1 + (!!(~x)));
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
@@ -290,3 +305,15 @@ unsigned float_i2f(int x) {
 int float_f2i(unsigned uf) {
   return 2;
 }
+
+// int main( void )
+// {
+//   isTmax(0);
+//   printf("\n");
+//   isTmax(0xffffffff);
+//   printf("\n");
+//   isTmax(0x80000000);
+//   printf("\n");
+//   isTmax(0x7fffffff);
+//   return 0;
+// }
